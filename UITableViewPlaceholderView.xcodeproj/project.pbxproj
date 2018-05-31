@@ -13,6 +13,7 @@
 		E169FE9120BFDD6D00525C5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E169FE9020BFDD6D00525C5E /* Assets.xcassets */; };
 		E169FE9420BFDD6D00525C5E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E169FE9220BFDD6D00525C5E /* LaunchScreen.storyboard */; };
 		E169FE9720BFDD6E00525C5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E169FE9620BFDD6E00525C5E /* main.m */; };
+		E169FE9F20BFDF5C00525C5E /* UITableView+placeholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E169FE9E20BFDF5C00525C5E /* UITableView+placeholderView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		E169FE9320BFDD6D00525C5E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E169FE9520BFDD6E00525C5E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E169FE9620BFDD6E00525C5E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E169FE9D20BFDF5C00525C5E /* UITableView+placeholderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UITableView+placeholderView.h"; sourceTree = "<group>"; };
+		E169FE9E20BFDF5C00525C5E /* UITableView+placeholderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UITableView+placeholderView.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +65,8 @@
 				E169FE8820BFDD6D00525C5E /* AppDelegate.m */,
 				E169FE8A20BFDD6D00525C5E /* ViewController.h */,
 				E169FE8B20BFDD6D00525C5E /* ViewController.m */,
+				E169FE9D20BFDF5C00525C5E /* UITableView+placeholderView.h */,
+				E169FE9E20BFDF5C00525C5E /* UITableView+placeholderView.m */,
 				E169FE8D20BFDD6D00525C5E /* Main.storyboard */,
 				E169FE9020BFDD6D00525C5E /* Assets.xcassets */,
 				E169FE9220BFDD6D00525C5E /* LaunchScreen.storyboard */,
@@ -143,6 +148,7 @@
 			files = (
 				E169FE8C20BFDD6D00525C5E /* ViewController.m in Sources */,
 				E169FE9720BFDD6E00525C5E /* main.m in Sources */,
+				E169FE9F20BFDF5C00525C5E /* UITableView+placeholderView.m in Sources */,
 				E169FE8920BFDD6D00525C5E /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
