@@ -7,8 +7,13 @@
 //
 
 #import "ViewController.h"
+#import "UITableView+placeholderView.h"
+#import "UITableViewPlaceholderView.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (nonatomic,assign) BOOL  isNormal ;
+
 
 @end
 
@@ -16,13 +21,45 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.isNormal = YES;
+    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
+    UITableViewPlaceholderView *placeholderView = [[UITableViewPlaceholderView alloc]initWithFrame:self.view.bounds];
+    self.tableView.placeholderView = placeholderView;
+}
+
+#pragma mark == UITableView
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    if (self.isNormal){
+        return 20;
+    }else{
+        return 0;
+    }
 }
 
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+    cell.textLabel.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row];
+    return cell;
+    
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    return 60;
+}
+
+- (IBAction)valueChangedAction:(UISegmentedControl *)sender {
+    if (sender.selectedSegmentIndex ==0) {
+        self.isNormal = YES;
+    }else{
+        self.isNormal = NO;
+    }
+    [self.tableView reloadData];
 }
 
 
