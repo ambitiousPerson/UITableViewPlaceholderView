@@ -25,6 +25,8 @@
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"UITableViewCell"];
     UITableViewPlaceholderView *placeholderView = [[UITableViewPlaceholderView alloc]initWithFrame:self.view.bounds];
     self.tableView.placeholderView = placeholderView;
+    self.tableView.isLoadEndData = YES;
+
 }
 
 #pragma mark == UITableView

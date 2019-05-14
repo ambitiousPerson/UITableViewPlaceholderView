@@ -10,5 +10,10 @@
 
 @interface UITableView (placeholderView)
 @property (nonatomic,strong) UIView * placeholderView ;
+/**
+ 是否加载完数据
+ */
+@property (nonatomic,assign) BOOL  isLoadEndData  ;
 
 @end
+

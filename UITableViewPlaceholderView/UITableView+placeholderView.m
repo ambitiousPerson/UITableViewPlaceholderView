@@ -10,7 +10,11 @@
 #import <objc/runtime.h>
 
 static NSString *const placeholderViewKey = @"WG_PlaceholderViewKey";
+
+static NSString *const isLoadEndDataKey = @"WG_isLoadEndDataKey";
+
 @implementation NSObject (swizzle)
+
 /**
  交换方法
  @param originalSel 原来的方法
@@ -53,6 +57,18 @@ static NSString *const placeholderViewKey = @"WG_PlaceholderViewKey";
 - (UIView *)placeholderView{
     return  objc_getAssociatedObject(self, (__bridge const void *)(placeholderViewKey));
 }
+
+- (void)setIsLoadEndData:(BOOL)isLoadEndData{
+    
+    objc_setAssociatedObject(self, (__bridge const void *)(isLoadEndDataKey), [NSNumber numberWithBool:isLoadEndData], OBJC_ASSOCIATION_ASSIGN);
+    
+}
+
+
+- (BOOL)isLoadEndData{
+    return  ((NSNumber*)objc_getAssociatedObject(self, (__bridge const void *)(isLoadEndDataKey))).boolValue;
+}
+
 - (void)wg_DataEmpty{
     
     BOOL isEmpty = YES;
@@ -68,7 +84,7 @@ static NSString *const placeholderViewKey = @"WG_PlaceholderViewKey";
         }
     }
     
-    if (isEmpty) {
+    if (isEmpty&&self.isLoadEndData) {
         [self.placeholderView removeFromSuperview];
         [self addSubview:self.placeholderView];
     }else{
@@ -76,3 +92,4 @@ static NSString *const placeholderViewKey = @"WG_PlaceholderViewKey";
     }
 }
 @end
+
