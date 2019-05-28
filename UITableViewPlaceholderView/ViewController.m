@@ -26,6 +26,7 @@
     UITableViewPlaceholderView *placeholderView = [[UITableViewPlaceholderView alloc]initWithFrame:self.view.bounds];
     self.tableView.placeholderView = placeholderView;
     self.tableView.isLoadEndData = YES;
+    NSLog(@"-------");
 
 }
 
